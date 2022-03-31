@@ -9,9 +9,7 @@ const [rowData] = useState([
 { name: "Alibek", age: 25 },
 ]);
 
-### 2. We created columnData in useState -> We use the key headerName and field.
-
-### headerName -> is column first name
+### 2. We created columnData in useState -> We use the key headerName and field.headerName -> is column first name.
 
 ### field -> is find key in the rowDatas value.
 

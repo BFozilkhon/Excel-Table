@@ -12,15 +12,50 @@ export const Table = () => {
   ]);
 
   const [columnData] = useState([
-    { headerName: "Hello", field: "name" },
-    { field: "age" },
+    {
+      headerName: "Names",
+      field: "name",
+      checkboxSelection: true,
+    },
+    { headerName: "Ages", field: "age", tooltipField: "name" },
   ]);
 
+  const defaultColDef = {
+    sortable: true,
+    editable: true,
+    filter: true,
+    floatingFilter: true,
+    flex: 1,
+  };
+
+  let gridApi;
+  const onGridReady = (params) => {
+    gridApi = params.api;
+  };
+
+  const onExportClick = () => {
+    gridApi.exportDataAsCsv();
+  };
+
   return (
-    <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
-      <AgGridReact rowData={rowData} columnDefs={columnData} />
-    </div>
+    <>
+      <button onClick={() => onExportClick()}>export</button>
+      <div className="ag-theme-alpine" style={{ height: 400, width: "100%" }}>
+        <AgGridReact
+          defaultColDef={defaultColDef}
+          rowData={rowData}
+          columnDefs={columnData}
+          onGridReady={onGridReady}
+          enableBrowserTooltips={true}
+          tooltipShowDelay={{ tooltipShowDelay: 10 }}
+        />
+      </div>
+    </>
   );
 };
 
 export default Table;
+
+// headerName, field, sortable, editable, filter, checkboxSelection, floatingFilter, flex
+
+/* faylni yuklab oldish -> onGridReady,let gridApi, params.api, exportDataAsCsv */

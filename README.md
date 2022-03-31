@@ -11,9 +11,9 @@ const [rowData] = useState([
 
 ### 2. We created columnData in useState -> We use the key headerName and field.
 
-## HeaderName is column first name
+### headerName -> is column first name
 
-## Field is find key in the rowDatas value.
+### field -> is find key in the rowDatas value.
 
 const [columnData] = useState([
 { headerName: "Names", field: "name" },
@@ -21,3 +21,7 @@ const [columnData] = useState([
 ]);
 
 ### 3. We write <AgGridReact rowData={rowData} columnDefs={columnData} /> and wrap up div with class name (ag-theme-alpine) and style style={{ height: 400, width: 600 }}
+
+ <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
+      <AgGridReact rowData={rowData} columnDefs={columnData} />
+ </div>

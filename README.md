@@ -22,6 +22,6 @@ const [columnData] = useState([
 
 ### 3. We write <AgGridReact rowData={rowData} columnDefs={columnData} /> and wrap up div with class name (ag-theme-alpine) and style style={{ height: 400, width: 600 }}
 
- <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
-      <AgGridReact rowData={rowData} columnDefs={columnData} />
- </div>
+## <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}> <AgGridReact rowData={rowData} columnDefs={columnData} />
+
+</div>
